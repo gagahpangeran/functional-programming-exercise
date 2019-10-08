@@ -7,8 +7,11 @@
   _Answer:_
 
   ```haskell
-  lenMapSum arr = sum (map toOne arr)
-                  where toOne _ = 1
+  lenMapSum arr = sum (map toOne arr) where toOne _ = 1
+  ```
+
+  ```haskell
+  lenMapSumAlt arr = sum . map (\_ -> 1)
   ```
 
 - What does `map (+1) (map (+1) xs)` do? Can you conclude anything in general
