@@ -46,3 +46,25 @@
   iter 0 f x = x
   iter n f x = f (iter (n-1) f x)
   ```
+
+- What is the type and effect of the following function?
+
+  ```haskell
+  \n -> iter n succ
+  ```
+
+  `succ` is the successor function, which increases a value by one:
+
+  ```haskell
+  Prelude> succ 33
+  34
+  ```
+
+  _Answer:_
+
+  ```haskell
+  \n -> iter n succ :: (Enum a, Eq x, Num x) => x -> a -> a
+  ```
+
+  The effect is there are additional data type `Enum` in input and output
+  because of `succ` function.

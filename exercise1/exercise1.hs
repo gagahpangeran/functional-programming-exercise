@@ -17,3 +17,6 @@ mapMap3 f g = map (f . g)
 iter :: (Num x, Eq x) => x -> (a -> a) -> a -> a
 iter 0 f x = x
 iter n f x = f (iter (n-1) f x)
+
+-- Number 4
+iterSucc n = \n -> iter n succ
