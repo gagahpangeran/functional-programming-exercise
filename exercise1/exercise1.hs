@@ -34,3 +34,11 @@ mystery xs = foldr (++) [] (map sing xs)
 
 -- Alt function
 mysteryAlt xs = foldr (++) [] (map (\x -> [x]) xs)
+
+-- Number 7 example function
+f :: Int -> Bool
+f x = x > 0
+
+fid1 = id . f
+fid2 = f . id
+fid3 = id f

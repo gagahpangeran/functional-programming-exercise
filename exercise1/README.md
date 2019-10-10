@@ -96,3 +96,27 @@
   The function mapping each element in the list and change it to single element
   list. After that, the single element list will be concated again each other.
   The output is equivalent with the input list.
+
+- If `id` is the polymorphic identity function, defined by `id x = x`, explain
+  the behavior of the expressions
+
+  - `(id . f)`
+  - `(f . id)`
+  - `(id f)`
+
+  If `f` is of type `Int -> Bool`, at what instance of its most general type
+  `a -> a` is `id` used in each case?
+
+  _Answer:_
+
+  ```haskell
+  (id . f) = (id :: Bool -> Bool) (f x) =  f x
+  ```
+
+  ```haskell
+  (f . id) = f ((id :: Int -> Int) x) = fx
+  ```
+
+  ```haskell
+  (id f) = (id :: (Int -> Bool) -> (Int -> Bool)) f = f
+  ```
