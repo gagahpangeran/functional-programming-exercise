@@ -81,3 +81,18 @@
   ```haskell
   squareSumAlt n = foldr (+) 0 (map (^2) [1..n])
   ```
+
+- How does the function
+
+  ```haskell
+  mystery xs = foldr (++) [] (map sing xs)
+    where
+      sing x = [x]
+  ```
+
+  behave?
+
+  _Answer:_\
+  The function mapping each element in the list and change it to single element
+  list. After that, the single element list will be concated again each other.
+  The output is equivalent with the input list.

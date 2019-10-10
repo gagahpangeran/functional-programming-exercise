@@ -26,3 +26,11 @@ squareSum n = foldr (+) 0 square where square = map (^2) [1..n]
 
 -- Alt Solution
 squareSumAlt n = foldr (+) 0 (map (^2) [1..n])
+
+-- Number 6
+mystery xs = foldr (++) [] (map sing xs)
+  where
+    sing x = [x]
+
+-- Alt function
+mysteryAlt xs = foldr (++) [] (map (\x -> [x]) xs)
