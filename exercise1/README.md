@@ -68,3 +68,16 @@
 
   The effect is there are additional data type `Enum` in input and output
   because of `succ` function.
+
+- How would you define the sum of the squares of the natural numbers 1 to `n`
+  using `map` and `foldr`?
+
+  _Answer:_
+
+  ```haskell
+  squareSum n = foldr (+) 0 square where square = map (^2) [1..n]
+  ```
+
+  ```haskell
+  squareSumAlt n = foldr (+) 0 (map (^2) [1..n])
+  ```

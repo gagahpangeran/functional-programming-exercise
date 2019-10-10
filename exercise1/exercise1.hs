@@ -20,3 +20,9 @@ iter n f x = f (iter (n-1) f x)
 
 -- Number 4
 iterSucc n = \n -> iter n succ
+
+-- Number 5
+squareSum n = foldr (+) 0 square where square = map (^2) [1..n]
+
+-- Alt Solution
+squareSumAlt n = foldr (+) 0 (map (^2) [1..n])
