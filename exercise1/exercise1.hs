@@ -42,3 +42,11 @@ f x = x > 0
 fid1 = id . f
 fid2 = f . id
 fid3 = id f
+
+-- Number 8
+composeList :: [(a -> a)] -> a -> a
+composeList xs = foldr (.) id xs
+
+-- Alt Solution
+composeListAlt :: [(a -> a)] -> a -> a
+composeListAlt = foldr (.) id

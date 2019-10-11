@@ -120,3 +120,20 @@
   ```haskell
   (id f) = (id :: (Int -> Bool) -> (Int -> Bool)) f = f
   ```
+
+- Define a function `composeList` which composes a list of functions into a
+  single function. You should give the type of `composeList`, and explain why
+  the function has this type. WHat is the effect of your function on an empty
+  list of functions?
+
+  _Answer:_
+
+  ```haskell
+  composeList :: [(a -> a)] -> a -> a
+  composeList xs = foldr (.) id xs
+  ```
+
+  ```haskell
+  composeListAlt :: [(a -> a)] -> a -> a
+  composeListAlt = foldr (.) id
+  ```
