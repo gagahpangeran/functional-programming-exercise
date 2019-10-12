@@ -137,3 +137,23 @@
   composeListAlt :: [(a -> a)] -> a -> a
   composeListAlt = foldr (.) id
   ```
+
+- Define the function
+
+  ```haskell
+  flip :: (a -> b -> c) -> (b -> a -> c)
+  ```
+
+  which reverses the order in which its function argument takes its arguments.\
+  The following example shows the effect of `flip`:
+
+  ```haskell
+  Prelude> flip div 3 100
+  33
+  ```
+
+  _Answer:_
+
+  ```haskell
+  flip f a b = f b a
+  ```

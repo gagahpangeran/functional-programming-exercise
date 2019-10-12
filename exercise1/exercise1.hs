@@ -50,3 +50,6 @@ composeList xs = foldr (.) id xs
 -- Alt Solution
 composeListAlt :: [(a -> a)] -> a -> a
 composeListAlt = foldr (.) id
+
+-- Number 9
+flip f a b = f b a
