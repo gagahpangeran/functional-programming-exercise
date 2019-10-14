@@ -169,3 +169,9 @@
      ```haskell
      map (+1) xs
      ```
+
+  2. `[ x+y | x <- xs, y <- ys ]`
+
+     ```haskell
+     concat (map (\x -> map (+x) ys) xs)
+     ```
