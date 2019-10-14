@@ -9,3 +9,9 @@ quickSort [] = []
 quickSort (x:xs) = quickSort [y | y <- xs, y <= x]
                    ++ [x] ++
                    quickSort [y | y <- xs, y > x]
+
+-- Alt Solution
+quickSortAlt [] = []
+quickSortAlt (x:xs) = quickSortAlt (filter (<=x) xs)
+                      ++ [x] ++
+                      quickSortAlt (filter (>x) xs)
