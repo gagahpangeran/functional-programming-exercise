@@ -23,3 +23,15 @@ perm ls = [ x:ps | x <- ls, ps <- perm(ls\\[x])]
 -- Number 5
 primes = sieve [2 ..]
     where sieve (x:xs) = x : (sieve [z | z <- xs, z `mod` x /= 0])
+
+-- Number 6
+pythaTriple = [(x,y,z) |  z <- [5 ..]
+                        , y <- [z, z-1 .. 1]
+                        , x <- [y, y-1 .. 1]
+                        , x*x + y*y == z*z ]
+
+-- Alt Solution
+pythaTripleAlt = [(x,y,z) |  z <- [5 ..]
+                           , y <- [z-1, z-2 .. 1]
+                           , x <- [y-1, y-2 .. 1]
+                           , x*x + y*y == z*z ]
