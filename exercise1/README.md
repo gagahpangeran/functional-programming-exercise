@@ -193,3 +193,11 @@
      ```haskell
      map ((+4) . fst) (filter (\(x,y) -> x + y < 5) xys)
      ```
+
+  6. `[ x+5 | Just x <- mxs ]`
+
+     ```haskell
+     map ((+5) . \(Just x) -> x) (filter isJust mxs)
+      where isJust Nothing = False
+            isJust (Just x) = True
+     ```
