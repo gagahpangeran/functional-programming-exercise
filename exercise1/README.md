@@ -181,3 +181,9 @@
      ```haskell
      map (+2) (filter (>3) xs)
      ```
+
+  4. `[ x+3 | (x,_) <- xys ]`
+
+     ```haskell
+     map ((+3) . fst) xs
+     ```
