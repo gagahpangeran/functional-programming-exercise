@@ -187,3 +187,9 @@
      ```haskell
      map ((+3) . fst) xs
      ```
+
+  5. `[ x+4 | (x,y) <- xys, x+y < 5]`
+
+     ```haskell
+     map ((+4) . fst) (filter (\(x,y) -> x + y < 5) xys)
+     ```
