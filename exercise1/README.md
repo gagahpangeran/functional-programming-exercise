@@ -92,7 +92,8 @@
 
   behave?
 
-  _Answer:_\
+  _Answer:_
+
   The function mapping each element in the list and change it to single element
   list. After that, the single element list will be concated again each other.
   The output is equivalent with the input list.
@@ -157,3 +158,14 @@
   ```haskell
   flip f a b = f b a
   ```
+
+## List Comprehensions and Higher-Order Functions
+
+- Can you rewrite the following list comprehensions using higher-order functions
+  `map` and `filter`? You might need the function concat too.
+
+  1. `[ x+1 | x <- xs ]`
+
+     ```haskell
+     map (+1) xs
+     ```
