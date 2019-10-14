@@ -201,3 +201,29 @@
       where isJust Nothing = False
             isJust (Just x) = True
      ```
+
+- Can you it the other way around? I.e. rewrite the following expressions as list comprehensions.
+
+  1. `map (+3) xs`
+
+     ```haskell
+     [x+3 | x <- xs]
+     ```
+
+  2. `filter (>7) xs`
+
+     ```haskell
+     [x | x <- xs , x > 7]
+     ```
+
+  3. `concat (map (\x -> map (\y -> (x,y)) ys) xs)`
+
+     ```haskell
+     [(x, y) | x <- xs, y <- ys]
+     ```
+
+  4. `filter (>3) (map (\(x,y) -> x+y) xys)`
+
+     ```haskell
+     [x+y | (x,y) <- xys, x+y > 3]
+     ```
