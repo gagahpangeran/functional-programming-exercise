@@ -175,3 +175,9 @@
      ```haskell
      concat (map (\x -> map (+x) ys) xs)
      ```
+
+  3. `[ x+2 | x <- xs, x > 3 ]`
+
+     ```haskell
+     map (+2) (filter (>3) xs)
+     ```
