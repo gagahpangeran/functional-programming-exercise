@@ -15,3 +15,11 @@ quickSortAlt [] = []
 quickSortAlt (x:xs) = quickSortAlt (filter (<=x) xs)
                       ++ [x] ++
                       quickSortAlt (filter (>x) xs)
+
+-- Number 4
+perm [] = [[]]
+perm ls = [ x:ps | x <- ls, ps <- perm(ls\\[x])]
+
+-- Number 5
+primes = sieve [2 ..]
+    where sieve (x:xs) = x : (sieve [z | z <- xs, z `mod` x /= 0])
