@@ -516,6 +516,9 @@ uses the following convention:
 >               (twice >> loop (n+1))
 
 
+> forLoop [] action = return ()
+> forLoop (x:xs) action = (action x) >> (forLoop xs action)
+
 > main = runRobot (moven 5 >> turnRight >> moven 5 >> turnLeft >> moven 20  ) s0 g3
 > main0 = runRobot spiral s0 g3
 > main3 = runRobot spiral s0 g3
